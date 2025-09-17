@@ -1,0 +1,36 @@
+name: filtrachek
+description: "A chemical and filter selection guide for ductless or non-ductless fume hoods"
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.8.1 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  # CSV parsing for chemical data
+  csv: ^5.0.2
+  # File picking for CSV uploads (mobile & web only) - UPDATED VERSION
+  file_picker: ^8.0.0  # Changed from 7.0.1 to 8.0.0
+  # Path provider for file system access
+  path_provider: ^2.1.1
+  # For HTTP requests or API calls
+  http: ^1.2.0
+  # For saving user settings
+  shared_preferences: ^2.2.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/chemical_guide.csv
+    - assets/
