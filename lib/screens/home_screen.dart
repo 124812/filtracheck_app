@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
 import 'faq_screens.dart';
 import 'chemical_calculator_screen.dart';
+import 'about_screen.dart';
+import 'catalog_screen.dart';
+import 'chemical_list_screen.dart';
+import 'contact_screen.dart';
+import 'dictionary_screen.dart';
+import 'news_feed_screen.dart';
 import '../widgets/nav_button.dart';
 import '../widgets/news_item.dart';
-import '../widgets/bottom_nav_bar.dart';
+import '../widgets/bottom_nav_bar.dart' as widgets;
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -42,22 +48,38 @@ class HomeScreen extends StatelessWidget {
                     NavButton(
                         text: 'Chemical',
                         icon: Icons.science,
-                        onTap: () {}
+                        onTap: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(builder: (context) => const ChemicalListScreen()),
+                          );
+                        }
                     ),
                     NavButton(
                         text: 'Catalog',
                         icon: Icons.list_alt,
-                        onTap: () {}
+                        onTap: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(builder: (context) => const CatalogScreen()),
+                          );
+                        }
                     ),
                     NavButton(
                         text: 'Contact',
                         icon: Icons.contact_page,
-                        onTap: () {}
+                        onTap: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(builder: (context) => const ContactScreen()),
+                          );
+                        }
                     ),
                     NavButton(
                         text: 'Newsfeed',
                         icon: Icons.feed,
-                        onTap: () {}
+                        onTap: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(builder: (context) => const NewsfeedScreen()),
+                          );
+                        }
                     ),
                     NavButton(
                         text: 'FAQ',
@@ -71,7 +93,11 @@ class HomeScreen extends StatelessWidget {
                     NavButton(
                         text: 'Dictionary',
                         icon: Icons.book,
-                        onTap: () {}
+                        onTap: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(builder: (context) => const DictionaryScreen()),
+                          );
+                        }
                     ),
                   ],
                 ),
@@ -101,7 +127,7 @@ class HomeScreen extends StatelessWidget {
           ),
         ),
       ),
-      bottomNavigationBar: const CustomBottomNavBar(),
+      bottomNavigationBar: const widgets.CustomBottomNavBar(),
     );
   }
 }
